@@ -1,0 +1,287 @@
+/* Estilos para a seção Bônus */
+.bonus {
+    background-color: #edf7f0;
+    padding: 100px 0;
+    position: relative;
+    overflow: hidden;
+}
+
+.bonus::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('https://images.unsplash.com/photo-1604357940013-6a7d7d7631fa?ixlib=rb-4.0.3&auto=format&fit=crop&w=1500&q=80');
+    background-size: cover;
+    background-position: center;
+    opacity: 0.08;
+    z-index: 0;
+}
+
+.bonus-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+    position: relative;
+    z-index: 1;
+}
+
+.bonus-titulo {
+    text-align: center;
+    margin-bottom: 60px;
+}
+
+.bonus-titulo h2 {
+    font-size: 2.5rem;
+    color: var(--primary-color);
+    margin-bottom: 15px;
+}
+
+.bonus-titulo p {
+    font-size: 1.1rem;
+    color: var(--text-color);
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+.bonus-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+    margin-bottom: 50px;
+}
+
+.bonus-card {
+    background-color: white;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    transform: translateY(30px);
+    opacity: 0;
+    transition: transform 0.6s ease, opacity 0.6s ease;
+}
+
+.bonus-card.animate-visible {
+    transform: translateY(0);
+    opacity: 1;
+}
+
+.bonus-imagem {
+    height: 220px;
+    overflow: hidden;
+    position: relative;
+}
+
+.bonus-imagem img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+.bonus-card:hover .bonus-imagem img {
+    transform: scale(1.05);
+}
+
+.bonus-etiqueta {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    background-color: var(--secondary-color);
+    color: white;
+    padding: 5px 12px;
+    border-radius: 20px;
+    font-size: 0.9rem;
+    font-weight: 600;
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1);
+}
+
+.bonus-conteudo {
+    padding: 25px;
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+}
+
+.bonus-conteudo h3 {
+    font-size: 1.6rem;
+    margin-bottom: 15px;
+    color: var(--primary-color);
+}
+
+.bonus-conteudo p {
+    font-size: 1rem;
+    margin-bottom: 20px;
+    color: var(--text-color);
+    line-height: 1.6;
+    flex: 1;
+}
+
+.bonus-lista {
+    margin-bottom: 25px;
+}
+
+.bonus-item {
+    display: flex;
+    align-items: flex-start;
+    margin-bottom: 10px;
+}
+
+.bonus-item i {
+    color: var(--secondary-color);
+    margin-right: 10px;
+    margin-top: 4px;
+}
+
+.bonus-item span {
+    font-size: 0.95rem;
+    line-height: 1.5;
+}
+
+.bonus-botao {
+    display: inline-block;
+    align-self: flex-start;
+    margin-top: auto;
+}
+
+.bonus-cta {
+    text-align: center;
+    margin-top: 40px;
+}
+
+.bonus-cta h3 {
+    font-size: 1.8rem;
+    margin-bottom: 20px;
+    color: var(--primary-color);
+}
+
+.bonus-cta p {
+    font-size: 1.1rem;
+    max-width: 800px;
+    margin: 0 auto 30px;
+    color: var(--text-color);
+}
+
+/* Estilos do Formulário Modal */
+.formulario-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    display: none;
+    justify-content: center;
+    align-items: center;
+    z-index: 2000;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.formulario-bonus {
+    background-color: white;
+    border-radius: 10px;
+    padding: 40px;
+    width: 90%;
+    max-width: 500px;
+    position: relative;
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+    transform: translateY(-20px);
+    transition: transform 0.3s ease;
+}
+
+.formulario-fechar {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    background: none;
+    border: none;
+    font-size: 1.5rem;
+    cursor: pointer;
+    color: var(--text-color);
+    transition: color 0.3s ease;
+}
+
+.formulario-fechar:hover {
+    color: var(--secondary-color);
+}
+
+.formulario-bonus h3 {
+    font-size: 1.8rem;
+    margin-bottom: 10px;
+    color: var(--primary-color);
+}
+
+.formulario-bonus p {
+    margin-bottom: 25px;
+    color: var(--text-color);
+}
+
+.formulario-campos {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.formulario-grupo {
+    display: flex;
+    flex-direction: column;
+}
+
+.formulario-grupo label {
+    margin-bottom: 5px;
+    font-size: 0.9rem;
+    font-weight: 500;
+}
+
+.formulario-grupo input[type="text"],
+.formulario-grupo input[type="email"],
+.formulario-grupo input[type="tel"] {
+    padding: 12px;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    font-size: 1rem;
+}
+
+.formulario-checkbox {
+    flex-direction: row;
+    align-items: center;
+    gap: 10px;
+}
+
+.formulario-checkbox label {
+    margin-bottom: 0;
+}
+
+.formulario-enviar {
+    margin-top: 10px;
+    width: 100%;
+}
+
+@media (max-width: 992px) {
+    .bonus-grid {
+        grid-template-columns: 1fr;
+        gap: 30px;
+    }
+    
+    .bonus-titulo h2 {
+        font-size: 2.2rem;
+    }
+    
+    .bonus-conteudo h3 {
+        font-size: 1.4rem;
+    }
+    
+    .bonus-imagem {
+        height: 180px;
+    }
+    
+    .bonus-cta h3 {
+        font-size: 1.6rem;
+    }
+}

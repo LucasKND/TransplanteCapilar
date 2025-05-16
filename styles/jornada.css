@@ -1,0 +1,280 @@
+/* Estilos para a seção Jornada */
+.jornada {
+    min-height: 200vh;
+    background: linear-gradient(to bottom, var(--light-color) 0%, #e8f4f8 100%);
+    position: relative;
+    overflow: hidden;
+}
+
+.jornada-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 80px 20px;
+    position: relative;
+}
+
+.jornada-titulo {
+    text-align: center;
+    margin-bottom: 60px;
+}
+
+.jornada-titulo h2 {
+    font-size: 2.5rem;
+    color: var(--primary-color);
+    margin-bottom: 15px;
+}
+
+.jornada-titulo p {
+    font-size: 1.1rem;
+    color: var(--text-color);
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+.jornada-caminho {
+    position: relative;
+    padding-bottom: 50px;
+}
+
+.jornada-linha {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 50%;
+    width: 4px;
+    background-color: var(--secondary-color);
+    transform: translateX(-50%);
+}
+
+.jornada-etapa {
+    display: flex;
+    margin-bottom: 100px;
+    position: relative;
+    opacity: 0;
+    transform: translateY(30px);
+    transition: all 0.8s ease;
+}
+
+.jornada-etapa.animate-visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.jornada-etapa:nth-child(odd) {
+    flex-direction: row;
+}
+
+.jornada-etapa:nth-child(even) {
+    flex-direction: row-reverse;
+}
+
+.jornada-etapa:last-child {
+    margin-bottom: 0;
+}
+
+.jornada-conteudo {
+    width: 45%;
+    background-color: white;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    position: relative;
+    z-index: 2;
+}
+
+.jornada-conteudo h3 {
+    font-size: 1.6rem;
+    color: var(--primary-color);
+    margin-bottom: 15px;
+}
+
+.jornada-conteudo p {
+    font-size: 1rem;
+    margin-bottom: 20px;
+    line-height: 1.6;
+}
+
+.jornada-conteudo .caracteristicas {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.jornada-conteudo .caracteristica {
+    background-color: #e8f4f8;
+    padding: 5px 12px;    border-radius: 20px;
+    font-size: 0.9rem;
+    color: var(--primary-color);
+}
+
+.jornada-conteudo .caracteristica i {
+    color: var(--secondary-color);
+    margin-right: 5px;
+}
+
+.jornada-conteudo .detalhes-ocultos {
+    height: 0;
+    opacity: 0;
+    overflow: hidden;
+    transition: all 0.5s ease;
+    margin-bottom: 0;
+}
+
+.jornada-conteudo .detalhes-ocultos.visivel {
+    height: auto;
+    opacity: 1;
+    margin-bottom: 20px;
+}
+
+.jornada-conteudo .btn {
+    display: inline-block;
+    margin-top: 10px;
+}
+
+.jornada-etapa:nth-child(odd) .jornada-conteudo {
+    margin-right: 10%;
+}
+
+.jornada-etapa:nth-child(even) .jornada-conteudo {
+    margin-left: 10%;
+}
+
+.jornada-imagem {
+    width: 45%;
+    position: relative;
+    align-self: center;
+}
+
+.jornada-imagem img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+}
+
+.jornada-indicador {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: 40px;
+    height: 40px;
+    background-color: var(--secondary-color);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-weight: bold;
+    z-index: 3;
+}
+
+/* Removidas as definições de top individuais para cada indicador, 
+   já que agora todos são centralizados automaticamente */
+
+.jornada-destaque {
+    text-align: center;
+    margin-top: 80px;
+    background-color: white;
+    padding: 50px 30px;
+    border-radius: 12px;
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+    opacity: 0;
+    transform: translateY(30px);
+    transition: all 0.8s ease;
+}
+
+.jornada-destaque.animate-visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.jornada-destaque h3 {
+    font-size: 2rem;
+    color: var(--primary-color);
+    margin-bottom: 20px;
+}
+
+.jornada-destaque p {
+    font-size: 1.1rem;
+    max-width: 800px;
+    margin: 0 auto 30px;
+}
+
+.jornada-bandeiras {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 40px;
+    margin-bottom: 30px;
+}
+
+.jornada-bandeira {
+    text-align: center;
+}
+
+.jornada-bandeira img {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 3px solid var(--light-color);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.jornada-bandeira p {
+    margin-top: 10px;
+    font-weight: 600;
+}
+
+.jornada-aviao {
+    font-size: 2rem;
+    color: var(--accent-color);
+}
+
+/* Responsividade */
+@media (max-width: 992px) {
+    .jornada-etapa, 
+    .jornada-etapa:nth-child(even) {
+        flex-direction: column;
+        margin-bottom: 70px;
+    }
+    
+    .jornada-conteudo,
+    .jornada-imagem,
+    .jornada-etapa:nth-child(odd) .jornada-conteudo,
+    .jornada-etapa:nth-child(even) .jornada-conteudo {
+        width: 100%;
+        margin: 0 0 30px 0;
+    }
+    
+    .jornada-linha {
+        left: 30px;
+    }
+    
+    .jornada-indicador {
+        left: 30px;
+        top: 30px;
+        transform: none;
+    }
+}
+
+@media (max-width: 768px) {
+    .jornada-titulo h2 {
+        font-size: 2rem;
+    }
+    
+    .jornada-conteudo h3 {
+        font-size: 1.4rem;
+    }
+    
+    .jornada-destaque h3 {
+        font-size: 1.8rem;
+    }
+    
+    .jornada-bandeiras {
+        flex-direction: column;
+        gap: 20px;
+    }
+}
