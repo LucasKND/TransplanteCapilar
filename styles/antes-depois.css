@@ -51,8 +51,13 @@
     overflow: hidden;
 }
 
+#carouselExampleIndicators .carousel-item img {
+    height: 600px;
+    object-fit: cover;
+}
+
 .carousel-item img {
-    height: 400px;
+    height: 550px;
     object-fit: cover;
 }
 
@@ -255,5 +260,9 @@
     .resultado-overlay::after {
         content: 'Toque para alternar';
         display: block;
+    }
+    
+    #carouselExampleIndicators .carousel-item img {
+        height: 450px;
     }
 }

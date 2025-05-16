@@ -96,14 +96,15 @@
 
 .jornada-conteudo .caracteristicas {
     display: flex;
-    flex-wrap: wrap;
+    flex-direction: column;
     gap: 10px;
     margin-bottom: 20px;
 }
 
 .jornada-conteudo .caracteristica {
     background-color: #e8f4f8;
-    padding: 5px 12px;    border-radius: 20px;
+    padding: 5px 12px;    
+    border-radius: 20px;
     font-size: 0.9rem;
     color: var(--primary-color);
 }
@@ -114,22 +115,7 @@
 }
 
 .jornada-conteudo .detalhes-ocultos {
-    height: 0;
-    opacity: 0;
-    overflow: hidden;
-    transition: all 0.5s ease;
-    margin-bottom: 0;
-}
-
-.jornada-conteudo .detalhes-ocultos.visivel {
-    height: auto;
-    opacity: 1;
-    margin-bottom: 20px;
-}
-
-.jornada-conteudo .btn {
-    display: inline-block;
-    margin-top: 10px;
+    display: none;
 }
 
 .jornada-etapa:nth-child(odd) .jornada-conteudo {
@@ -205,9 +191,12 @@
 .jornada-bandeiras {
     display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: space-between;
     gap: 40px;
     margin-bottom: 30px;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .jornada-bandeira {
@@ -215,22 +204,32 @@
 }
 
 .jornada-bandeira img {
-    width: 80px;
-    height: 80px;
-    border-radius: 50%;
-    object-fit: cover;
-    border: 3px solid var(--light-color);
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    width: 160px;
+    height: auto;
+    object-fit: contain;
+    border: 2px solid #ddd;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.jornada-bandeira img:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 25px rgba(0, 0, 0, 0.2);
 }
 
 .jornada-bandeira p {
-    margin-top: 10px;
+    margin-top: 15px;
     font-weight: 600;
+    font-size: 1.1rem;
+    color: var(--primary-color);
 }
 
-.jornada-aviao {
-    font-size: 2rem;
-    color: var(--accent-color);
+.bandeira-alemanha {
+    transform: translateX(20px);
+}
+
+.bandeira-brasil {
+    transform: translateX(-20px);
 }
 
 /* Responsividade */
@@ -274,7 +273,17 @@
     }
     
     .jornada-bandeiras {
-        flex-direction: column;
-        gap: 20px;
+        flex-direction: row;
+        justify-content: space-evenly;
+        gap: 10px;
+    }
+    
+    .jornada-bandeira img {
+        width: 120px;
+    }
+    
+    .bandeira-alemanha,
+    .bandeira-brasil {
+        transform: translateX(0);
     }
 }

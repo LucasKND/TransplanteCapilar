@@ -123,13 +123,15 @@
 }
 
 .bonus-lista {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
     margin-bottom: 25px;
 }
 
 .bonus-item {
     display: flex;
     align-items: flex-start;
-    margin-bottom: 10px;
 }
 
 .bonus-item i {

@@ -208,3 +208,14 @@
         font-size: 2.2rem;
     }
 }
+
+/* Media query para ocultar texto introdutório em dispositivos móveis */
+@media (max-width: 767px) {
+    .contato-info h3 {
+        display: none;
+    }
+    
+    .contato-info p {
+        display: none;
+    }
+}

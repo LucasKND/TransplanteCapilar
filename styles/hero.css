@@ -159,6 +159,21 @@
     height: auto;
     border-radius: 10px;
     box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+    object-fit: cover;
+    max-height: 600px;
+}
+
+@media (max-width: 768px) {
+    .hero-image img {
+        max-height: 450px;
+        margin: 0 auto;
+    }
+}
+
+@media (max-width: 576px) {
+    .hero-image img {
+        max-height: 350px;
+    }
 }
 
 /* Botão de WhatsApp */

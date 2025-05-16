@@ -29,25 +29,6 @@ document.addEventListener('DOMContentLoaded', function() {
     
     // Verificar visibilidade no carregamento da página
     checkVisibility();
-    
-    // Verificar visibilidade ao scrollar
+      // Verificar visibilidade ao scrollar
     window.addEventListener('scroll', checkVisibility);
-    
-    // Botões de saiba mais nas etapas da jornada
-    const saibaMaisBotoes = document.querySelectorAll('.btn-saiba-mais');
-    
-    saibaMaisBotoes.forEach(botao => {
-        botao.addEventListener('click', function(e) {
-            e.preventDefault();
-            
-            // Encontrar o parágrafo oculto relacionado ao botão
-            const etapa = this.closest('.jornada-conteudo');
-            const detalhes = etapa.querySelector('.detalhes-ocultos');
-            
-            if (detalhes) {
-                detalhes.classList.toggle('visivel');
-                this.textContent = detalhes.classList.contains('visivel') ? 'Mostrar menos' : 'Saiba mais';
-            }
-        });
-    });
 });
