@@ -1,0 +1,126 @@
+/* Estilos para a seção de FAQ */
+.faq {
+    padding: 100px 0;
+    background-color: #f8f9fa;
+}
+
+.faq-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.faq-titulo {
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+.faq-titulo h2 {
+    font-size: 2.5rem;
+    color: var(--primary-color);
+    margin-bottom: 15px;
+}
+
+.faq-titulo p {
+    font-size: 1.1rem;
+    color: var(--text-color);
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+.faq-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
+    gap: 30px;
+}
+
+.faq-item {
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+    overflow: hidden;
+    transition: all 0.3s ease;
+}
+
+.faq-item:hover {
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+    transform: translateY(-3px);
+}
+
+.faq-pergunta {
+    padding: 20px 25px;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid #eee;
+    position: relative;
+}
+
+.faq-pergunta h3 {
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: var(--primary-color);
+    margin: 0;
+}
+
+.faq-pergunta .icone {
+    color: var(--secondary-color);
+    font-size: 1.2rem;
+    transition: transform 0.3s ease;
+}
+
+.faq-item.ativo .faq-pergunta .icone {
+    transform: rotate(180deg);
+}
+
+.faq-resposta {
+    padding: 0 25px;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease, padding 0.3s ease;
+}
+
+.faq-item.ativo .faq-resposta {
+    max-height: 500px;
+    padding: 20px 25px;
+}
+
+.faq-resposta p {
+    font-size: 1rem;
+    line-height: 1.6;
+    color: var(--text-color);
+    margin: 0;
+}
+
+.faq-cta {
+    text-align: center;
+    margin-top: 50px;
+}
+
+.faq-cta h3 {
+    font-size: 1.8rem;
+    color: var(--primary-color);
+    margin-bottom: 15px;
+}
+
+.faq-cta p {
+    font-size: 1.1rem;
+    max-width: 700px;
+    margin: 0 auto 30px;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+    .faq-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .faq-titulo h2 {
+        font-size: 2rem;
+    }
+    
+    .faq-cta h3 {
+        font-size: 1.5rem;
+    }
+}

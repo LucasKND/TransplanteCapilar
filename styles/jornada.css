@@ -257,9 +257,127 @@
         top: 30px;
         transform: none;
     }
+    
+    .jornada {
+        min-height: auto;
+    }
+    
+    /* Melhorar a aparência das imagens em tablets */
+    .jornada-imagem {
+        max-width: 100%;
+        height: auto;
+    }
+    
+    .jornada-imagem img {
+        max-height: 350px;
+        object-fit: cover;
+        width: 100%;
+    }
+}
+
+/* Estilos específicos para tablet (entre 769px e 991px) */
+@media (min-width: 769px) and (max-width: 991px) {
+    .jornada-linha {
+        left: 40px;
+        transform: none;
+    }
+    
+    .jornada-etapa {
+        margin-bottom: 80px;
+        display: flex;
+        flex-direction: column !important; /* Força o layout em coluna para todos os breakpoints de tablet */
+    }
+    
+    .jornada-indicador {
+        left: 40px;
+        top: 30px;
+        transform: translateX(-50%);
+    }
+    
+    .jornada-indicador.tablet-indicator {
+        left: 40px !important;
+        top: 30px !important;
+        transform: translateX(-50%) !important;
+        width: 38px;
+        height: 38px;
+        font-size: 1.1rem;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        z-index: 10;
+    }
+    
+    .jornada-conteudo {
+        width: calc(100% - 80px);
+        margin-left: 70px !important;
+        margin-right: 10px !important;
+        padding: 25px;
+        margin-bottom: 15px;
+    }
+    
+    .jornada-etapa:nth-child(odd) .jornada-conteudo,
+    .jornada-etapa:nth-child(even) .jornada-conteudo {
+        width: calc(100% - 80px);
+        margin-left: 70px !important;
+        margin-right: 10px !important;
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+    }
+    
+    .jornada-imagem {
+        width: 100%;
+        margin-top: 20px;
+        margin-bottom: 40px;
+        margin-left: 70px !important;
+        max-width: calc(100% - 80px);
+    }
+    
+    .jornada-imagem img {
+        max-height: 300px;
+        object-fit: cover;
+        border-radius: 8px;
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+    }
+    
+    .jornada-container {
+        padding: 70px 20px;
+    }
+    
+    .jornada-titulo {
+        margin-bottom: 50px;
+    }
+    
+    .jornada-titulo h2 {
+        font-size: 2.2rem;
+    }
+    
+    .jornada-conteudo h3 {
+        font-size: 1.5rem;
+    }
+    
+    /* Ajustes para jornada-destaque em tablets */
+    .jornada-destaque {
+        margin-top: 60px;
+        padding: 40px 30px;
+    }
+    
+    .jornada-bandeiras {
+        max-width: 500px;
+        gap: 20px;
+    }
+    
+    .jornada-bandeira img {
+        width: 130px;
+    }
 }
 
 @media (max-width: 768px) {
+    /* Ocultar imagens na jornada para dispositivos móveis */
+    .jornada-imagem {
+        display: none;
+    }
+    
+    .jornada {
+        min-height: auto;
+    }
+    
     .jornada-titulo h2 {
         font-size: 2rem;
     }
@@ -270,6 +388,49 @@
     
     .jornada-destaque h3 {
         font-size: 1.8rem;
+    }
+    
+    /* Melhorar layout quando as imagens estão ocultas */
+    .jornada-etapa {
+        margin-bottom: 50px;
+        /* Força todas as etapas a estarem em coluna em mobile */
+        flex-direction: column !important;
+    }
+    
+    /* Ajustes específicos para conteúdo móvel */
+    .jornada-conteudo {
+        padding: 25px 20px;
+        margin-bottom: 0 !important;
+        margin-left: 50px !important;
+        width: calc(100% - 50px) !important;
+    }
+    
+    /* Criação de uma classe específica para mobile que não afeta o layout de desktop */
+    .jornada-etapa:nth-child(odd) .jornada-conteudo,
+    .jornada-etapa:nth-child(even) .jornada-conteudo {
+        margin-left: 50px !important;
+        margin-right: 0 !important;
+    }
+      /* Ajustando a linha e os indicadores para melhor visualização */
+    .jornada-linha {
+        left: 20px;
+        transform: none;
+    }
+    
+    .jornada-indicador {
+        left: 20px;
+        top: 30px;
+        transform: translateX(-50%); /* Centralizar no eixo da linha */
+        width: 36px;
+        height: 36px;
+        font-size: 1rem;
+    }
+    
+    /* Classe específica para mobile que só é adicionada via JavaScript */
+    .jornada-indicador.mobile-indicator {
+        left: 20px !important;
+        top: 30px !important;
+        transform: translateX(-50%) !important;
     }
     
     .jornada-bandeiras {
@@ -285,5 +446,98 @@
     .bandeira-alemanha,
     .bandeira-brasil {
         transform: translateX(0);
+    }
+}
+
+/* Ajustes para telas muito pequenas */
+@media (max-width: 480px) {
+    .jornada-container {
+        padding: 60px 15px;
+    }
+    
+    .jornada-titulo h2 {
+        font-size: 1.8rem;
+    }
+    
+    .jornada-titulo p {
+        font-size: 1rem;
+    }
+    /* Ajustes de conteúdo para telas muito pequenas */
+    .jornada-conteudo {
+        padding: 20px 15px;
+        margin-left: 40px !important;
+        width: calc(100% - 40px) !important;
+    }
+    
+    /* Ajustes específicos para dispositivos muito pequenos */
+    .jornada-etapa:nth-child(odd) .jornada-conteudo,
+    .jornada-etapa:nth-child(even) .jornada-conteudo {
+        margin-left: 40px !important;
+        margin-right: 0 !important;
+    }
+    
+    .jornada-conteudo h3 {
+        font-size: 1.3rem;
+        margin-bottom: 10px;
+    }
+    
+    .jornada-conteudo p {
+        font-size: 0.95rem;
+        margin-bottom: 15px;
+    }
+    
+    .jornada-conteudo .caracteristicas {
+        gap: 5px; /* Reduzir o espaçamento entre características */
+    }
+    
+    .jornada-conteudo .caracteristica {
+        font-size: 0.85rem;
+        padding: 4px 10px;
+        margin-bottom: 2px;
+    }
+    
+    /* Ajustes da linha do tempo e indicadores */
+    .jornada-linha {
+        left: 15px;
+        width: 3px; /* Linha ligeiramente mais fina em telas muito pequenas */
+        transform: none;
+    }
+      .jornada-indicador {
+        left: 15px;
+        top: 30px;
+        width: 32px;
+        height: 32px;
+        font-size: 0.9rem;
+        transform: translateX(-50%); /* Centralizar sobre a linha */
+        box-shadow: 0 3px 6px rgba(0, 0, 0, 0.2); /* Adicionar sombra suave */
+    }
+    
+    /* Classes específicas para telas muito pequenas via JavaScript */
+    .jornada-indicador.mobile-indicator.very-small-screen {
+        left: 15px !important;
+        width: 32px !important;
+        height: 32px !important;
+        font-size: 0.9rem !important;
+    }
+    
+    .jornada-etapa {
+        margin-bottom: 30px; /* Reduzir espaço entre etapas em telas muito pequenas */
+    }
+    
+    .jornada-destaque {
+        padding: 25px 15px;
+        margin-top: 40px; /* Reduzir margem superior */
+    }
+    
+    .jornada-destaque h3 {
+        font-size: 1.5rem;
+    }
+    
+    .jornada-bandeira img {
+        width: 80px;
+    }
+    
+    .jornada-bandeira p {
+        font-size: 0.9rem;
     }
 }

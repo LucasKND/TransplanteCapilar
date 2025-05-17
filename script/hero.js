@@ -68,6 +68,24 @@ document.addEventListener('DOMContentLoaded', function() {
             }
         });
     }
+    
+    // Ajuste de altura para mobile
+    function adjustHeroHeight() {
+        const hero = document.querySelector('.hero');
+        if (hero) {
+            // Em dispositivos móveis, ajustar altura para conteúdo
+            if (window.innerWidth <= 767) {
+                hero.style.height = 'auto';
+                hero.style.minHeight = 'auto';
+            } else {
+                hero.style.minHeight = '100vh';
+            }
+        }
+    }
+    
+    // Executar no carregamento e redimensionamento
+    adjustHeroHeight();
+    window.addEventListener('resize', adjustHeroHeight);
 });
 
 // Função para abrir WhatsApp com mensagem pré-definida

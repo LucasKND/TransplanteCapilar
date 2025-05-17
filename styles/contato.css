@@ -218,4 +218,125 @@
     .contato-info p {
         display: none;
     }
+    
+    /* Estilo para garantir que as informações de contato apareçam na versão mobile */
+    .contato-metodos {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+        margin-bottom: 30px;
+        background-color: white;
+        padding: 25px 20px;
+        border-radius: 10px;
+        box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+    }
+    
+    .contato-metodo {
+        display: flex;
+        align-items: center;
+        gap: 15px;
+    }
+    
+    .contato-metodo-icone {
+        width: 50px;
+        height: 50px;
+        background-color: var(--secondary-color);
+        border-radius: 50%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color: white;
+        font-size: 1.2rem;
+    }
+    
+    .contato-metodo-texto h4 {
+        font-size: 1.1rem;
+        margin-bottom: 5px;
+        color: var(--primary-color);
+        font-weight: 600;
+    }
+    
+    .contato-metodo-texto p {
+        display: block !important; /* Forçar exibição dos parágrafos dentro dos métodos de contato */
+        font-size: 0.95rem;
+        margin: 0;
+        color: var(--text-color);
+    }
+    
+    .contato-grid {
+        gap: 30px;
+    }
+    
+    /* Espaçamento entre o formulário e as informações de contato */
+    .contato-info {
+        margin-bottom: 20px;
+    }
+    
+    /* Destacar os ícones de contato */
+    .contato-metodo-icone {
+        background-color: var(--secondary-color);
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+    }
+    
+    /* Melhorar a legibilidade dos dados de contato */
+    .contato-metodo-texto p {
+        font-weight: 500;
+    }
+}
+
+/* Estilos para título específico mobile */
+.contato-mobile-titulo {
+    display: none; /* Oculto por padrão */
+}
+
+@media (max-width: 767px) {
+    .contato-mobile-titulo {
+        display: block;
+        text-align: center;
+        margin-bottom: 20px;
+    }
+    
+    .contato-mobile-titulo h3 {
+        display: block;
+        font-size: 1.6rem;
+        color: var(--primary-color);
+        margin-bottom: 15px;
+    }
+}
+
+/* Estilos para dispositivos ainda menores */
+@media (max-width: 480px) {
+    .contato-metodos {
+        padding: 20px 15px;
+    }
+    
+    .contato-metodo {
+        gap: 10px;
+    }
+    
+    .contato-metodo-icone {
+        width: 45px;
+        height: 45px;
+        font-size: 1rem;
+    }
+    
+    .contato-metodo-texto h4 {
+        font-size: 1rem;
+    }
+    
+    .contato-metodo-texto p {
+        font-size: 0.9rem;
+    }
+    
+    .contato-mobile-titulo h3 {
+        font-size: 1.4rem;
+    }
+    
+    .contato {
+        padding: 60px 0;
+    }
+    
+    .contato-titulo h2 {
+        font-size: 1.8rem;
+    }
 }

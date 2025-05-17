@@ -75,16 +75,34 @@
     display: none;
     flex-direction: column;
     cursor: pointer;
+    width: 30px;
+    height: 25px;
+    position: relative;
+    z-index: 1001;
 }
 
 .menu-hamburguer span {
     display: block;
-    width: 25px;
+    width: 100%;
     height: 3px;
     background-color: var(--primary-color);
     margin-bottom: 5px;
     border-radius: 3px;
     transition: all 0.3s ease;
+    position: relative;
+}
+
+/* Animação do menu hamburger quando ativo */
+.menu-hamburguer.active span:nth-child(1) {
+    transform: translateY(8px) rotate(45deg);
+}
+
+.menu-hamburguer.active span:nth-child(2) {
+    opacity: 0;
+}
+
+.menu-hamburguer.active span:nth-child(3) {
+    transform: translateY(-8px) rotate(-45deg);
 }
 
 /* Conteúdo Principal da Hero */
@@ -220,6 +238,33 @@
     }
 }
 
+@media (max-width: 767px) {
+    /* Ocultar a foto do médico em dispositivos móveis */
+    .hero-image {
+        display: none;
+    }
+    
+    /* Ajustar o espaçamento quando a imagem está oculta */
+    .hero-text {
+        margin-bottom: 0;
+        padding-bottom: 20px;
+        width: 100%;
+    }
+    
+    /* Melhorar espaçamento vertical */
+    .hero-text h1 {
+        margin-bottom: 1rem;
+    }
+    
+    .hero-text p {
+        margin-bottom: 1.5rem;
+    }
+    
+    .hero-buttons {
+        margin-top: 1.5rem;
+    }
+}
+
 @media (max-width: 768px) {
     .nav-links {
         display: none;
@@ -231,10 +276,22 @@
         flex-direction: column;
         padding: 20px;
         box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+        z-index: 1000;
+    }
+      .nav-links.active {
+        display: flex;
+        animation: slideDown 0.3s ease-in-out;
     }
     
-    .nav-links.active {
-        display: flex;
+    @keyframes slideDown {
+        from {
+            opacity: 0;
+            transform: translateY(-10px);
+        }
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
     }
     
     .menu-hamburguer {
@@ -243,5 +300,36 @@
     
     .hero-text h1 {
         font-size: 2.2rem;
+    }
+    
+    /* Ajustes para o hero em dispositivos móveis */
+    .hero {
+        min-height: auto;
+        padding-top: 10px;
+        padding-bottom: 30px;
+    }
+    
+    .hero-content {
+        padding: 2rem 0;
+    }
+}
+
+/* Ajustes adicionais para dispositivos muito pequenos */
+@media (max-width: 480px) {
+    .hero-text h1 {
+        font-size: 1.8rem;
+    }
+    
+    .hero-text p {
+        font-size: 1rem;
+    }
+    
+    .btn {
+        padding: 10px 20px;
+        font-size: 0.9rem;
+    }
+    
+    .logo img {
+        height: 80px !important;
     }
 }
