@@ -233,8 +233,14 @@
     
     .contato-metodo {
         display: flex;
-        align-items: center;
-        gap: 15px;
+        flex-direction: column;
+        align-items: flex-start;
+        text-align: left;
+        gap: 5px;
+    }
+    
+    .contato-metodo-icone {
+        display: none; /* Hide icons in mobile view */
     }
     
     .contato-metodo-icone {
@@ -248,34 +254,41 @@
         color: white;
         font-size: 1.2rem;
     }
-    
-    .contato-metodo-texto h4 {
-        font-size: 1.1rem;
-        margin-bottom: 5px;
+      .contato-metodo-texto h4 {
+        font-size: 1.2rem;
+        margin-bottom: 2px;
         color: var(--primary-color);
         font-weight: 600;
     }
     
     .contato-metodo-texto p {
         display: block !important; /* Forçar exibição dos parágrafos dentro dos métodos de contato */
-        font-size: 0.95rem;
+        font-size: 1.1rem;
         margin: 0;
         color: var(--text-color);
+        font-weight: 400;
     }
     
     .contato-grid {
         gap: 30px;
     }
-    
-    /* Espaçamento entre o formulário e as informações de contato */
+      /* Espaçamento entre o formulário e as informações de contato */
     .contato-info {
         margin-bottom: 20px;
     }
     
-    /* Destacar os ícones de contato */
-    .contato-metodo-icone {
-        background-color: var(--secondary-color);
-        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+    /* Reajustes para o layout sem ícones */
+    .contato-metodos {
+        padding: 30px 25px;
+    }
+    
+    .contato-metodo {
+        padding: 10px 5px;
+        border-bottom: 1px solid rgba(0,0,0,0.05);
+    }
+    
+    .contato-metodo:last-child {
+        border-bottom: none;
     }
     
     /* Melhorar a legibilidade dos dados de contato */
@@ -311,21 +324,20 @@
     }
     
     .contato-metodo {
-        gap: 10px;
+        gap: 4px;
     }
     
+    /* Já está oculto pelo media query anterior */
     .contato-metodo-icone {
-        width: 45px;
-        height: 45px;
-        font-size: 1rem;
+        display: none;
     }
     
     .contato-metodo-texto h4 {
-        font-size: 1rem;
+        font-size: 1.15rem;
     }
     
     .contato-metodo-texto p {
-        font-size: 0.9rem;
+        font-size: 1rem;
     }
     
     .contato-mobile-titulo h3 {
