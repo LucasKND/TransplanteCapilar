@@ -1,6 +1,28 @@
 // Script para a seção Antes e Depois
 
 document.addEventListener('DOMContentLoaded', function() {
+    // Configuração manual para o carrossel para evitar o comportamento de rolagem indesejado
+    $(document).ready(function() {
+        // Adicionando handlers específicos após o carregamento do Bootstrap
+        $('.carousel-control-prev, .carousel-control-next').click(function(e) {
+            // Impedir qualquer ação padrão que possa causar rolagem
+            e.preventDefault();
+            e.stopPropagation();
+            
+            // Determinar a direção e controlar o carrossel manualmente
+            const direction = $(this).hasClass('carousel-control-prev') ? 'prev' : 'next';
+            $('#carouselExampleIndicators').carousel(direction);
+            
+            // Retornar false para impedir qualquer comportamento adicional
+            return false;
+        });
+        
+        // Impedir que qualquer clique no carrossel cause rolagem
+        $('#carouselExampleIndicators').click(function(e) {
+            e.preventDefault();
+        });
+    });
+    
     // Animação ao scrollar para os cards de resultados
     const resultadoCards = document.querySelectorAll('.resultado-card');
     

@@ -49,6 +49,7 @@
 #carouselExampleIndicators {
     border-radius: 10px;
     overflow: hidden;
+    scroll-behavior: auto;
 }
 
 #carouselExampleIndicators .carousel-item img {
@@ -84,11 +85,21 @@
 .carousel-control-next {
     width: 10%;
     opacity: 0.8;
+    cursor: pointer;
+    background: none;
+    border: none;
+    outline: none !important;
 }
 
 .carousel-control-prev:hover, 
 .carousel-control-next:hover {
     opacity: 1;
+}
+
+.carousel-control-prev:focus,
+.carousel-control-next:focus {
+    outline: none !important;
+    box-shadow: none !important;
 }
 
 .resultados-grid {

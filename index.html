@@ -144,8 +144,7 @@
                 <p>Estas não são montagens ou promessas vazias. São histórias reais de homens como você que decidiram transformar suas vidas.</p>
             </div>
               <!-- Carrossel Bootstrap -->
-            <div class="carrossel-container">
-                <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+            <div class="carrossel-container">                <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
                   <ol class="carousel-indicators">
                     <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
                     <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
@@ -160,14 +159,13 @@
                     <div class="carousel-item">
                       <img class="d-block w-100" src="assets/after3.jpg" alt="Terceiro Slide - Antes e Depois">
                     </div>
-                  </div>
-                  <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+                  </div>                  <button class="carousel-control-prev" type="button" data-target="#carouselExampleIndicators" data-slide="prev" onclick="return false;">
                     <span class="carousel-control-prev-icon" aria-hidden="true"></span>
                     <span class="sr-only">Anterior</span>
-                  </a>
-                  <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+                  </button>
+                  <button class="carousel-control-next" type="button" data-target="#carouselExampleIndicators" data-slide="next" onclick="return false;">
                     <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                    <span class="sr-only">Próximo</span>                  </a>
+                    <span class="sr-only">Próximo</span>                  </button>
                 </div>
             </div>
             
@@ -559,10 +557,16 @@
         </div>
     </footer>
 
-    <!-- Botão de WhatsApp fixo -->
-    <a href="https://wa.me/5511999999999" class="whatsapp-button" target="_blank">
+    <!-- Botão de WhatsApp fixo -->    <a href="https://wa.me/5511999999999" class="whatsapp-button" target="_blank">
         <i class="fab fa-whatsapp"></i>
-    </a>    <script src="script/index.js"></script>
+    </a>    
+    <!-- Primeiro os scripts do Bootstrap -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    
+    <!-- Depois os scripts personalizados -->
+    <script src="script/index.js"></script>
     <script src="script/hero.js"></script>
     <script src="script/jornada.js"></script>
     <script src="script/antes-depois.js"></script>
@@ -571,8 +575,5 @@
     <script src="script/faq.js"></script>
     <script src="script/contato.js"></script>
     <script src="script/footer.js"></script>
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 </body>
 </html>
