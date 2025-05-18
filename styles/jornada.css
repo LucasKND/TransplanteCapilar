@@ -396,20 +396,20 @@
         /* Força todas as etapas a estarem em coluna em mobile */
         flex-direction: column !important;
     }
-      /* Ajustes específicos para conteúdo móvel */
-    .jornada-conteudo {
+      /* Ajustes específicos para conteúdo móvel */    .jornada-conteudo {
         padding: 25px 15px;
         margin-bottom: 0 !important;
-        margin-left: 40px !important;
-        width: calc(100% - 40px) !important;
+        margin-left: 35px !important;
+        width: calc(100% - 35px) !important;
         box-sizing: border-box;
+        max-width: 100%;
     }
-    
-    /* Criação de uma classe específica para mobile que não afeta o layout de desktop */
+      /* Criação de uma classe específica para mobile que não afeta o layout de desktop */
     .jornada-etapa:nth-child(odd) .jornada-conteudo,
     .jornada-etapa:nth-child(even) .jornada-conteudo {
-        margin-left: 40px !important;
+        margin-left: 35px !important;
         margin-right: 0 !important;
+        box-sizing: border-box;
     }
       /* Ajustando a linha e os indicadores para melhor visualização */
     .jornada-linha {

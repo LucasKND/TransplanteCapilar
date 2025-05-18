@@ -94,6 +94,10 @@
     padding: 40px;
     border-radius: 10px;
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    max-width: 100%;
+    overflow-x: hidden;
+    box-sizing: border-box;
+    width: 100%;
 }
 
 .contato-formulario form {
@@ -122,6 +126,8 @@
     font-size: 1rem;
     font-family: inherit;
     transition: border-color 0.3s ease;
+    width: 100%;
+    box-sizing: border-box;
 }
 
 .form-grupo input:focus,
@@ -145,6 +151,7 @@
     align-items: flex-start;
     gap: 10px;
     font-size: 0.9rem;
+    flex-wrap: wrap;
 }
 
 .form-politica input {
@@ -161,6 +168,7 @@
     font-weight: 600;
     cursor: pointer;
     transition: background-color 0.3s ease, transform 0.2s ease;
+    max-width: 100%;
 }
 
 .contato-botao:hover {
@@ -238,21 +246,8 @@
         text-align: left;
         gap: 5px;
     }
-    
-    .contato-metodo-icone {
+      .contato-metodo-icone {
         display: none; /* Hide icons in mobile view */
-    }
-    
-    .contato-metodo-icone {
-        width: 50px;
-        height: 50px;
-        background-color: var(--secondary-color);
-        border-radius: 50%;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        color: white;
-        font-size: 1.2rem;
     }
       .contato-metodo-texto h4 {
         font-size: 1.2rem;
@@ -260,13 +255,17 @@
         color: var(--primary-color);
         font-weight: 600;
     }
-    
-    .contato-metodo-texto p {
+      .contato-metodo-texto p {
         display: block !important; /* Forçar exibição dos parágrafos dentro dos métodos de contato */
-        font-size: 1.1rem;
+        font-size: 1rem;
         margin: 0;
         color: var(--text-color);
         font-weight: 400;
+        word-wrap: break-word;
+        overflow-wrap: break-word;
+        word-break: break-word;
+        hyphens: auto;
+        max-width: 100%;
     }
     
     .contato-grid {
@@ -319,17 +318,39 @@
 
 /* Estilos para dispositivos ainda menores */
 @media (max-width: 480px) {
+    .contato-grid {
+        grid-template-columns: 1fr;
+        gap: 30px;
+        width: 100%;
+    }
+    
+    .contato-info {
+        padding-right: 0;
+        width: 100%;
+        max-width: 100%;
+        overflow-x: hidden;
+    }
+    
     .contato-metodos {
         padding: 20px 15px;
+        width: 100%;
+        box-sizing: border-box;
     }
     
     .contato-metodo {
         gap: 4px;
+        width: 100%;
+        flex-direction: column;
+        align-items: flex-start;
     }
     
     /* Já está oculto pelo media query anterior */
     .contato-metodo-icone {
         display: none;
+    }
+    
+    .contato-metodo-texto {
+        width: 100%;
     }
     
     .contato-metodo-texto h4 {
@@ -338,6 +359,7 @@
     
     .contato-metodo-texto p {
         font-size: 1rem;
+        word-break: break-word;
     }
     
     .contato-mobile-titulo h3 {
@@ -346,9 +368,68 @@
     
     .contato {
         padding: 60px 0;
+        width: 100%;
+        overflow-x: hidden;
     }
     
     .contato-titulo h2 {
         font-size: 1.8rem;
+    }
+    
+    .contato-formulario {
+        padding: 30px 20px;
+        width: 100%;
+        box-sizing: border-box;
+    }
+    
+    /* Ajustes adicionais para o formulário */
+    .form-politica {
+        font-size: 0.85rem;
+        width: 100%;
+    }
+    
+    .form-politica label {
+        line-height: 1.4;
+    }
+    
+    .form-politica label a {
+        word-break: break-all;
+        display: inline;
+    }
+    
+    /* Garantir que todos os inputs respeitem o tamanho do contêiner */
+    .form-grupo input,
+    .form-grupo textarea,
+    .form-grupo select {
+        width: 100%;
+        box-sizing: border-box;
+        max-width: 100%;
+    }
+}
+
+/* Dispositivos extremamente pequenos */
+@media (max-width: 375px) {
+    .contato-formulario {
+        padding: 25px 15px;
+    }
+    
+    .form-grupo {
+        gap: 6px;
+    }
+    
+    .form-grupo input,
+    .form-grupo textarea {
+        padding: 10px 12px;
+        font-size: 0.95rem;
+    }
+    
+    .contato-botao {
+        width: 100%;
+        padding: 12px;
+        font-size: 0.95rem;
+    }
+    
+    .form-politica {
+        gap: 8px;
     }
 }
