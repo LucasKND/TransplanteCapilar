@@ -150,3 +150,9 @@ img, video, iframe, embed, object {
 .animate-fade-in {
     animation: fadeIn 0.8s ease forwards;
 }
+
+/* Classe para destacar texto na cor amarela do Brasil */
+.destaque-amarelo {
+    color: #FFDF00; /* Amarelo da bandeira brasileira */
+    font-weight: 600;
+}

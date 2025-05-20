@@ -211,10 +211,13 @@
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.15);
     z-index: 1000;
     transition: all 0.3s ease;
+    text-decoration: none; /* Remove o sublinhado */
 }
 
 .whatsapp-button:hover {
     transform: scale(1.1);
+    color: white; /* Mantém a cor branca ao passar o mouse */
+    text-decoration: none; /* Garante que o sublinhado não apareça no hover */
 }
 
 /* Responsividade */
