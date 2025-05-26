@@ -1,0 +1,79 @@
+.video-section {
+    padding: 80px 0;
+    background-color: #f5f5f5;
+    position: relative;
+    overflow: hidden;
+}
+
+.video-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.video-titulo {
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+.video-titulo h2 {
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin-bottom: 15px;
+    color: var(--primary-color);
+}
+
+.video-titulo p {
+    font-size: 1.1rem;
+    max-width: 800px;
+    margin: 0 auto;
+    line-height: 1.6;
+}
+
+.video-wrapper {
+    width: 100%;
+    max-width: 540px; /* Tamanho padrão do widget do Instagram */
+    margin: 0 auto;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+    position: relative;
+}
+
+.video-wrapper .instagram-media {
+    margin: 0 auto !important;
+    width: 100% !important;
+    min-width: unset !important;
+}
+
+.video-cta {
+    text-align: center;
+    margin-top: 50px;
+}
+
+.video-cta h3 {
+    font-size: 1.6rem;
+    margin-bottom: 15px;
+    color: var(--primary-color);
+}
+
+.video-cta p {
+    max-width: 700px;
+    margin: 0 auto 25px;
+    font-size: 1.1rem;
+    line-height: 1.6;
+}
+
+@media (max-width: 768px) {
+    .video-wrapper {
+        max-width: 100%;
+    }
+    
+    .video-titulo h2 {
+        font-size: 2rem;
+    }
+    
+    .video-cta h3 {
+        font-size: 1.4rem;
+    }
+}
