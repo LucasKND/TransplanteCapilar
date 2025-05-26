@@ -32,18 +32,50 @@
 
 .video-wrapper {
     width: 100%;
-    max-width: 540px; /* Tamanho padrão do widget do Instagram */
+    max-width: 800px;
     margin: 0 auto;
     border-radius: 10px;
     overflow: hidden;
     box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
     position: relative;
+    min-height: 450px; /* Altura mínima aumentada */
+    aspect-ratio: 16/9;
 }
 
-.video-wrapper .instagram-media {
-    margin: 0 auto !important;
-    width: 100% !important;
-    min-width: unset !important;
+.video-wrapper video {
+    width: 100%;
+    height: 100%;
+    object-fit: contain; /* Alterado de cover para contain */
+    display: block;
+    min-height: 450px; /* Altura mínima aumentada */
+}
+
+.video-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.4);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.video-overlay:hover {
+    background-color: rgba(0, 0, 0, 0.2);
+}
+
+.video-overlay img {
+    max-width: 80px;
+    filter: drop-shadow(0 5px 10px rgba(0, 0, 0, 0.4));
+    transition: transform 0.3s ease;
+}
+
+.video-overlay:hover img {
+    transform: scale(1.1);
 }
 
 .video-cta {
@@ -67,7 +99,30 @@
 @media (max-width: 768px) {
     .video-wrapper {
         max-width: 100%;
+        min-height: 350px; /* Altura mínima ajustada para telas menores */
     }
+    
+    .video-wrapper video {
+        min-height: 350px; /* Altura mínima ajustada para telas menores */
+    }
+}
+
+@media (max-width: 480px) {
+    .video-wrapper {
+        min-height: 300px; /* Altura mínima ajustada para telas muito pequenas */
+    }
+    
+    .video-wrapper video {
+        min-height: 300px; /* Altura mínima ajustada para telas muito pequenas */
+    }
+}
+        min-height: 300px; /* Altura mínima ajustada para telas muito pequenas */
+    }
+    
+    .video-wrapper video {
+        min-height: 300px; /* Altura mínima ajustada para telas muito pequenas */
+    }
+}
     
     .video-titulo h2 {
         font-size: 2rem;

@@ -1,13 +1,30 @@
 document.addEventListener('DOMContentLoaded', function() {
-    // Script do Instagram é carregado assíncronamente, então precisamos verificar
-    // se ele já foi carregado e, caso contrário, recarregá-lo manualmente
-    if (window.instgrm) {
-        window.instgrm.Embeds.process();
-    } else {
-        // Se por algum motivo o script do Instagram não foi carregado
-        const instagramScript = document.createElement('script');
-        instagramScript.src = "//www.instagram.com/embed.js";
-        instagramScript.async = true;
-        document.body.appendChild(instagramScript);
+    // Captura os elementos do vídeo
+    const videoOverlay = document.getElementById('video-overlay');
+    const videoElement = document.getElementById('transplante-video');
+    
+    if (videoOverlay && videoElement) {
+        // Adiciona o evento de clique no overlay
+        videoOverlay.addEventListener('click', function() {
+            // Inicia a reprodução do vídeo
+            videoElement.play()
+                .then(() => {
+                    // Esconde o overlay quando o vídeo começar a ser reproduzido
+                    videoOverlay.style.display = 'none';
+                })
+                .catch(error => {
+                    console.error('Erro ao reproduzir o vídeo:', error);
+                });
+        });
+
+        // Adiciona evento para mostrar o overlay quando o vídeo parar
+        videoElement.addEventListener('pause', function() {
+            videoOverlay.style.display = 'flex';
+        });
+
+        // Adiciona evento para mostrar o overlay quando o vídeo terminar
+        videoElement.addEventListener('ended', function() {
+            videoOverlay.style.display = 'flex';
+        });
     }
 });
