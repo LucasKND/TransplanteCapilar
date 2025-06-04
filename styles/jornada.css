@@ -281,98 +281,14 @@
         object-fit: cover;
         width: 100%;
     }
-}
-
-/* Estilos específicos para tablet (entre 769px e 991px) */
-@media (min-width: 769px) and (max-width: 991px) {
-    .jornada-linha {
-        left: 40px;
-        transform: none;
+    
+    /* Ajustes específicos para accordion em tablets */
+    .accordion-item .jornada-header {
+        padding: 15px 0;
     }
     
-    .jornada-etapa {
-        margin-bottom: 80px;
-        display: flex;
-        flex-direction: column !important; /* Força o layout em coluna para todos os breakpoints de tablet */
-    }
-    
-    .jornada-indicador {
-        left: 40px;
-        top: 30px;
-        transform: translateX(-50%);
-    }
-    
-    .jornada-indicador.tablet-indicator {
-        left: 40px !important;
-        top: 30px !important;
-        transform: translateX(-50%) !important;
-        width: 38px;
-        height: 38px;
-        font-size: 1.1rem;
-        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-        z-index: 10;
-    }
-    
-    .jornada-conteudo {
-        width: calc(100% - 80px);
-        margin-left: 70px !important;
-        margin-right: 10px !important;
-        padding: 25px;
-        margin-bottom: 15px;
-    }
-    
-    .jornada-etapa:nth-child(odd) .jornada-conteudo,
-    .jornada-etapa:nth-child(even) .jornada-conteudo {
-        width: calc(100% - 80px);
-        margin-left: 70px !important;
-        margin-right: 10px !important;
-        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
-    }
-    
-    .jornada-imagem {
-        width: 100%;
-        margin-top: 20px;
-        margin-bottom: 40px;
-        margin-left: 70px !important;
-        max-width: calc(100% - 80px);
-    }
-    
-    .jornada-imagem img {
-        max-height: 300px;
-        object-fit: cover;
-        border-radius: 8px;
-        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
-    }
-    
-    .jornada-container {
-        padding: 70px 20px;
-    }
-    
-    .jornada-titulo {
-        margin-bottom: 50px;
-    }
-    
-    .jornada-titulo h2 {
-        font-size: 2.2rem;
-    }
-    
-    .jornada-conteudo h3 {
-        font-size: 1.5rem;
-    }
-    
-    /* Ajustes para jornada-destaque em tablets */
-    .jornada-destaque {
-        margin-top: 60px;
-        padding: 40px 30px;
-    }
-    
-    .jornada-bandeiras {
-        max-width: 500px;
-        gap: 20px;
-    }
-    
-    .jornada-bandeira img {
-        width: 130px;
+    .jornada-toggle-icon i {
+        font-size: 1.3rem;
     }
 }
 
@@ -540,12 +456,151 @@
     .jornada-destaque h3 {
         font-size: 1.5rem;
     }
-    
-    .jornada-bandeira img {
+      .jornada-bandeira img {
         width: 80px;
     }
     
     .jornada-bandeira p {
         font-size: 0.9rem;
+    }
+}
+
+/* =================================
+   NOVO ACCORDION - IMPLEMENTAÇÃO LIMPA
+   ================================= */
+
+/* Estado inicial - accordion fechado */
+.accordion-item .jornada-conteudo {
+    overflow: hidden;
+    transition: all 0.3s ease;
+    padding: 0; /* SEM padding quando fechado */
+}
+
+/* Quando o accordion está aberto, aumentar o padding */
+.accordion-item.active .jornada-conteudo {
+    padding: 30px; /* Padding completo quando aberto */
+}
+
+/* Header do accordion - sempre visível */
+.jornada-header {
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0;
+    padding: 20px; /* Padding apenas no header para dar altura mínima */
+    width: 100%;
+    background-color: white;
+    border-radius: 8px;
+}
+
+.jornada-header:hover {
+    opacity: 0.8;
+}
+
+.jornada-header h3 {
+    margin: 0;
+    flex-grow: 1;
+}
+
+/* Ícone do toggle */
+.jornada-toggle-icon {
+    margin-left: 15px;
+    transition: transform 0.3s ease;
+    flex-shrink: 0;
+}
+
+.jornada-toggle-icon i {
+    color: var(--secondary-color);
+    font-size: 1.2rem;
+}
+
+/* Conteúdo que expande/contrai */
+.jornada-details {
+    overflow: hidden;
+    max-height: 0;
+    opacity: 0;
+    transition: max-height 0.4s ease, opacity 0.3s ease, padding 0.3s ease;
+    padding: 0 20px; /* Padding lateral */
+}
+
+/* Estado ativo - accordion aberto */
+.accordion-item.active .jornada-details {
+    max-height: 600px;
+    opacity: 1;
+    padding: 0 20px 20px 20px; /* Padding completo quando aberto */
+}
+
+.accordion-item.active .jornada-toggle-icon {
+    transform: rotate(180deg);
+}
+
+/* Ajustes responsivos */
+@media (max-width: 768px) {
+    .accordion-item .jornada-conteudo {
+        padding: 0; /* SEM padding para mobile quando fechado */
+    }
+    
+    .accordion-item.active .jornada-conteudo {
+        padding: 25px; /* Padding completo para mobile quando aberto */
+    }
+    
+    .jornada-header {
+        padding: 15px; /* Padding reduzido no header para mobile */
+    }
+    
+    .jornada-toggle-icon {
+        margin-left: 10px;
+    }
+    
+    .jornada-toggle-icon i {
+        font-size: 1.1rem;
+    }
+    
+    .jornada-header h3 {
+        font-size: 1.4rem;
+        line-height: 1.3;
+    }
+    
+    .jornada-details {
+        padding: 0 15px; /* Padding lateral reduzido */
+    }
+    
+    .accordion-item.active .jornada-details {
+        padding: 0 15px 15px 15px; /* Padding completo reduzido quando aberto */
+    }
+}
+
+@media (max-width: 480px) {
+    .accordion-item .jornada-conteudo {
+        padding: 0; /* SEM padding para telas pequenas quando fechado */
+    }
+    
+    .accordion-item.active .jornada-conteudo {
+        padding: 20px; /* Padding completo para telas pequenas quando aberto */
+    }
+    
+    .jornada-header {
+        padding: 12px; /* Padding ainda menor no header */
+    }
+    
+    .jornada-toggle-icon {
+        margin-left: 8px;
+    }
+    
+    .jornada-toggle-icon i {
+        font-size: 1rem;
+    }
+    
+    .jornada-header h3 {
+        font-size: 1.3rem;
+    }
+    
+    .jornada-details {
+        padding: 0 12px; /* Padding lateral ainda menor */
+    }
+    
+    .accordion-item.active .jornada-details {
+        padding: 0 12px 12px 12px; /* Padding completo ainda menor quando aberto */
     }
 }
