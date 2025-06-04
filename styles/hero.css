@@ -353,4 +353,15 @@
     .logo img {
         height: 80px !important;
     }
+    
+    .company-name {
+        font-size: 0.8rem !important;
+    }
+}
+
+/* Media query adicional para tablets e mobile landscape */
+@media (max-width: 768px) {
+    .company-name {
+        font-size: 0.9rem;
+    }
 }
