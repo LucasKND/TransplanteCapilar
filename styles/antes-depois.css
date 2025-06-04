@@ -222,6 +222,8 @@
     padding: 40px;
     border-radius: 10px;
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    border: 3px solid #FFDF00; /* Borda amarela da bandeira brasileira */
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1), 0 4px 15px rgba(255, 223, 0, 0.3);
 }
 
 .antes-depois-cta h3 {

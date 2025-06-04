@@ -44,6 +44,7 @@
     opacity: 0.9;
 }
 
+/* Estilos específicos para a logo no footer */
 .footer-coluna .logo {
     margin-bottom: 15px;
     font-size: 1.8rem;
@@ -51,11 +52,20 @@
     color: white;
     display: flex;
     align-items: center;
-    gap: 10px;
+    gap: 15px;
+    flex-direction: row;
 }
 
-.footer-coluna .logo i {
-    color: var(--secondary-color);
+.footer-coluna .logo img {
+    margin-bottom: 0;
+}
+
+.footer-coluna .logo .company-name {
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: white;
+    margin: 0;
+    text-align: left;
 }
 
 .footer-links {
@@ -109,6 +119,16 @@
 .footer-social a:hover {
     background-color: var(--secondary-color);
     transform: translateY(-3px);
+    text-decoration: none !important;
+}
+
+/* Remover sublinhado dos ícones sociais */
+.footer-social a, .footer-social a:hover, .footer-social a:focus {
+    text-decoration: none !important;
+}
+
+.footer-social i {
+    text-decoration: none !important;
 }
 
 .footer-newsletter p {

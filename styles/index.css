@@ -156,3 +156,25 @@ img, video, iframe, embed, object {
     color: #FFDF00; /* Amarelo da bandeira brasileira */
     font-weight: 600;
 }
+
+/* Classe para destacar texto na cor azul do Brasil */
+.destaque-azul {
+    color: #302681; /* Azul da bandeira brasileira */
+    font-weight: 600;
+}
+
+/* Remover sublinhado de ícones em links */
+a i, a:hover i, a:focus i {
+    text-decoration: none !important;
+}
+
+/* Remover sublinhado de ícones Font Awesome */
+.fas, .fab, .far, .fal, .fad {
+    text-decoration: none !important;
+}
+
+/* Links contendo ícones não devem ter sublinhado */
+a:hover .fas, a:hover .fab, a:hover .far, a:hover .fal, a:hover .fad,
+a:focus .fas, a:focus .fab, a:focus .far, a:focus .fal, a:focus .fad {
+    text-decoration: none !important;
+}

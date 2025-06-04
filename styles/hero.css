@@ -32,6 +32,24 @@
     z-index: 1000;
 }
 
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.logo img {
+    height: 60px;
+    width: auto;
+}
+
+.company-name {
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: #302681; /* Azul da bandeira brasileira */
+    margin: 0;
+}
+
 .logo h1 {
     font-size: 1.8rem;
     font-weight: 700;
