@@ -91,10 +91,9 @@ document.addEventListener('DOMContentLoaded', function() {
 // Função para abrir WhatsApp com mensagem pré-definida
 function openWhatsApp() {
     // Número de telefone com código do país (substitua pelo número correto)
-    const phoneNumber = '5511999999999';
-    
-    // Mensagem pré-definida (deve ser codificada para URL)
-    const message = encodeURIComponent('Olá! Gostaria de mais informações sobre transplante capilar.');
+    const phoneNumber = '4915788012551';
+      // Mensagem pré-definida (deve ser codificada para URL)
+    const message = encodeURIComponent('Hallo! Ich interessiere mich für eine Beratung zum Haarimplantat in Brasilien.');
     
     // Construir a URL do WhatsApp
     const whatsappUrl = `https://wa.me/${phoneNumber}?text=${message}`;

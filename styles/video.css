@@ -115,14 +115,11 @@
     .video-wrapper video {
         min-height: 300px; /* Altura mínima ajustada para telas muito pequenas */
     }
-}
-        min-height: 300px; /* Altura mínima ajustada para telas muito pequenas */
-    }
     
     .video-wrapper video {
         min-height: 300px; /* Altura mínima ajustada para telas muito pequenas */
     }
-}
+
     
     .video-titulo h2 {
         font-size: 2rem;
@@ -132,3 +129,4 @@
         font-size: 1.4rem;
     }
 }
+

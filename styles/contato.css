@@ -196,6 +196,24 @@
     margin-bottom: 25px;
 }
 
+/* Estilos para o mapa do Google Maps */
+.contato-mapa {
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    max-width: 100%;
+    box-sizing: border-box;
+    width: 100%;
+}
+
+.contato-mapa iframe {
+    width: 100%;
+    height: 450px;
+    border: 0;
+    border-radius: 10px;
+}
+
 @media (max-width: 992px) {
     .contato-grid {
         grid-template-columns: 1fr;
@@ -213,6 +231,14 @@
     
     .contato-titulo h2 {
         font-size: 2.2rem;
+    }
+    
+    .contato-mapa {
+        padding: 15px;
+    }
+    
+    .contato-mapa iframe {
+        height: 400px;
     }
 }
 
@@ -292,6 +318,14 @@
     /* Melhorar a legibilidade dos dados de contato */
     .contato-metodo-texto p {
         font-weight: 500;
+    }
+    
+    .contato-mapa {
+        padding: 15px;
+    }
+    
+    .contato-mapa iframe {
+        height: 350px;
     }
 }
 
