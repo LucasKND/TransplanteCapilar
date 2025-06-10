@@ -1,0 +1,175 @@
+/* Estilos para a seção Über mich */
+.uber-mich {
+    padding: 100px 0;
+    background-color: white;
+    position: relative;
+}
+
+.uber-mich-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.uber-mich-titulo {
+    text-align: center;
+    margin-bottom: 60px;
+}
+
+.uber-mich-titulo h2 {
+    font-size: 2.5rem;
+    color: var(--primary-color);
+    margin-bottom: 15px;
+}
+
+.uber-mich-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+    align-items: center;
+}
+
+.uber-mich-foto {
+    text-align: center;
+}
+
+.uber-mich-foto img {
+    width: 100%;
+    max-width: 500px;
+    border-radius: 15px;
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.uber-mich-foto img:hover {
+    transform: translateY(-5px);
+}
+
+.uber-mich-conteudo {
+    font-size: 1.1rem;
+    line-height: 1.7;
+    color: var(--text-color);
+    max-width: 800px;
+    text-align: center;
+}
+
+.uber-mich-conteudo p {
+    margin-bottom: 20px;
+}
+
+.uber-mich-garantien {
+    margin: 30px 0;
+    padding: 25px;
+    background-color: var(--light-color);
+    border-radius: 10px;
+    border-left: 4px solid var(--secondary-color);
+}
+
+.uber-mich-garantie {
+    display: flex;
+    align-items: flex-start;
+    margin-bottom: 15px;
+    padding: 10px 0;
+}
+
+.uber-mich-garantie:last-child {
+    margin-bottom: 0;
+}
+
+.uber-mich-garantie i {
+    color: var(--secondary-color);
+    margin-right: 15px;
+    margin-top: 3px;
+    font-size: 1.2rem;
+    min-width: 20px;
+}
+
+.uber-mich-garantie span {
+    font-size: 1rem;
+    line-height: 1.6;
+    font-weight: 500;
+}
+
+.uber-mich-cta {
+    margin-top: 30px;
+    text-align: center;
+}
+
+.uber-mich-cta .btn {
+    font-size: 1.1rem;
+    padding: 15px 30px;
+}
+
+/* Responsividade */
+@media (max-width: 992px) {
+    .uber-mich-grid {
+        gap: 30px;
+    }
+    
+    .uber-mich-titulo h2 {
+        font-size: 2.2rem;
+    }
+    
+    .uber-mich-conteudo {
+        max-width: 700px;
+    }
+}
+
+@media (max-width: 767px) {
+    .uber-mich {
+        padding: 60px 0;
+    }
+    
+    .uber-mich-grid {
+        gap: 25px;
+    }
+    
+    .uber-mich-titulo h2 {
+        font-size: 1.8rem;
+    }
+    
+    .uber-mich-conteudo {
+        font-size: 1rem;
+        max-width: 600px;
+    }
+    
+    .uber-mich-foto img {
+        max-width: 320px;
+    }
+    
+    .uber-mich-garantien {
+        padding: 20px;
+    }
+    
+    .uber-mich-garantie {
+        flex-direction: column;
+        text-align: center;
+        margin-bottom: 20px;
+    }
+    
+    .uber-mich-garantie i {
+        margin-right: 0;
+        margin-bottom: 10px;
+        font-size: 1.5rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .uber-mich-titulo h2 {
+        font-size: 1.6rem;
+    }
+    
+    .uber-mich-conteudo {
+        max-width: 100%;
+    }
+    
+    .uber-mich-foto img {
+        max-width: 280px;
+    }
+    
+    .uber-mich-cta .btn {
+        width: 100%;
+        padding: 12px 20px;
+        font-size: 1rem;
+    }
+}

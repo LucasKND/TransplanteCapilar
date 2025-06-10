@@ -1,0 +1,34 @@
+User-agent: *
+Allow: /
+
+# Sitemap location
+Sitemap: https://www.repairandrecover.de/sitemap.xml
+
+# Allow all search engines to crawl the site
+# Specific directives for major search engines
+User-agent: Googlebot
+Allow: /
+
+User-agent: Bingbot
+Allow: /
+
+User-agent: Slurp
+Allow: /
+
+# Crawl delay to be respectful to server resources
+Crawl-delay: 1
+
+# Block access to assets that don't need indexing
+Disallow: /script/
+Disallow: /styles/
+Disallow: *.css$
+Disallow: *.js$
+
+# Important pages for SEO
+# Main page: /
+# Journey: /#jornada
+# Results: /#resultados
+# Doctor: /#sobre
+# About: /#uber-mich
+# FAQ: /#faq
+# Contact: /#contato
