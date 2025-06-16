@@ -423,15 +423,19 @@
     .jornada-linha {
         left: 20px;
         transform: none;
-    }
-    
-    .jornada-indicador {
+    }    .jornada-indicador {
         left: 20px;
         top: 30px;
         transform: translateX(-50%); /* Centralizar no eixo da linha */
         width: 36px;
         height: 36px;
         font-size: 1rem;
+    }
+    
+    /* Ajuste específico para ícones no indicador no mobile */
+    .jornada-indicador i {
+        font-size: 0.9rem;
+        line-height: 1;
     }
     
     /* Classe específica para mobile que só é adicionada via JavaScript */
