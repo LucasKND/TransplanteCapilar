@@ -7,6 +7,84 @@
     --accent-color: #3498db;
 }
 
+/* Cores específicas para os itens de navegação */
+.nav-home {
+    color: #777777 !important; /* Cinza */
+}
+
+.nav-ablauf {
+    color: var(--secondary-color) !important; /* Verde */
+}
+
+.nav-vorher {
+    color: #FFDF00 !important; /* Amarelo */
+}
+
+.nav-chirurg {
+    color: #3498db !important; /* Azul */
+}
+
+.nav-bonus {
+    color: #e74c3c !important; /* Vermelho */
+}
+
+/* Efeito hover para os itens coloridos */
+.nav-home:hover, .nav-ablauf:hover, .nav-vorher:hover, .nav-chirurg:hover, .nav-bonus:hover {
+    opacity: 0.85;
+    text-decoration: underline;
+}
+
+/* Estilos para a caixa de pacote completo */
+.hero-package-box {
+    background-color: rgba(39, 174, 96, 0.1); /* Cor secundária com transparência */
+    border: 2px solid var(--secondary-color);
+    border-radius: 10px;
+    padding: 20px;
+    margin: 25px 0;
+    box-shadow: 0 4px 12px rgba(39, 174, 96, 0.15);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.hero-package-box:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(39, 174, 96, 0.2);
+}
+
+.hero-package-box h3 {
+    color: var(--secondary-color);
+    font-size: 1.5rem;
+    margin-bottom: 12px;
+    font-weight: 700;
+}
+
+.hero-package-box p {
+    color: var(--text-color);
+    font-size: 1rem;
+    margin-bottom: 10px;
+    line-height: 1.5;
+}
+
+.hero-package-box p:last-child {
+    margin-bottom: 0;
+    font-weight: 500;
+}
+
+/* Responsividade para a caixa de pacote */
+@media (max-width: 768px) {
+    .hero-package-box {
+        padding: 15px;
+        margin: 20px 0;
+    }
+    
+    .hero-package-box h3 {
+        font-size: 1.3rem;
+    }
+    
+    .hero-package-box p {
+        font-size: 0.95rem;
+    }
+}
+
 .hero {
     position: relative;
     min-height: 100vh;
@@ -30,12 +108,15 @@
     padding: 1.5rem 0;
     position: relative;
     z-index: 1000;
+    flex-wrap: nowrap; /* Prevent wrapping */
 }
 
 .logo {
     display: flex;
     align-items: center;
-    gap: 15px;
+    gap: 5px; /* Reduced from 10px to move text more to the left */
+    flex-shrink: 0; /* Prevent logo from shrinking */
+    margin-right: 15px; /* Add right margin to push nav items further right */
 }
 
 .logo img {
@@ -44,10 +125,12 @@
 }
 
 .company-name {
-    font-size: 1.1rem;
+    font-size: 1rem;
     font-weight: 600;
     color: #302681; /* Azul da bandeira brasileira */
     margin: 0;
+    margin-left: -3px; /* Negative margin to pull text slightly left */
+    transform: translateX(-5px); /* Further shift left */
 }
 
 .logo h1 {
@@ -60,9 +143,14 @@
 .nav-links {
     display: flex;
     list-style: none;
-    gap: 2rem;
+    gap: 1.2rem; /* Reduced from 2rem to allow more items in the same row */
     margin: 0;
     padding: 0;
+    flex-wrap: nowrap; /* Prevent wrapping */
+}
+
+.nav-links li {
+    white-space: nowrap; /* Prevent text wrapping within nav items */
 }
 
 .nav-links li a {
@@ -363,5 +451,100 @@
 @media (max-width: 768px) {
     .company-name {
         font-size: 0.9rem;
+    }
+}
+
+/* Responsividade para telas maiores e médias */
+@media (min-width: 993px) and (max-width: 1200px) {
+    .nav-links {
+        gap: 1rem; /* Ainda menor para telas médias */
+    }
+    
+    .nav-links li a {
+        font-size: 0.9rem; /* Reduzir um pouco o tamanho da fonte */
+    }
+    
+    .btn-contato {
+        padding: 8px 12px;
+    }
+}
+
+@media (min-width: 1201px) {
+    .container {
+        max-width: 1300px; /* Ligeiramente maior para telas grandes */
+    }
+    
+    .nav-links {
+        gap: 1.4rem;
+    }
+}
+
+/* Ajuste do tamanho do logo para desktops */
+@media (min-width: 992px) {
+    .logo img {
+        height: 50px; /* Logo um pouco menor em desktop para ganhar espaço */
+        width: auto;
+    }
+    
+    .company-name {
+        transform: translateX(-7px); /* Maior deslocamento à esquerda em desktop */
+    }
+    
+    /* Garantir que a navegação não quebre em telas maiores */
+    .navbar {
+        justify-content: space-between;
+        width: 100%;
+    }
+    
+    /* Evitar que o menu encolha demais */
+    .nav-links {
+        flex: 1;
+        justify-content: flex-end;
+        margin-left: 10px; /* Add some space between logo and nav */
+    }
+}
+
+/* Tablets e telas médias - exibir menu hamburguer */
+@media (max-width: 991px) {
+    .nav-links {
+        display: none;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        background-color: white;
+        flex-direction: column;
+        padding: 20px;
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+        z-index: 1000;
+    }
+    
+    .nav-links.active {
+        display: flex;
+        animation: slideDown 0.3s ease-in-out;
+    }
+    
+    @keyframes slideDown {
+        from {
+            opacity: 0;
+            transform: translateY(-10px);
+        }
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+    
+    .menu-hamburguer {
+        display: flex;
+    }
+    
+    /* Ajustes específicos para tablets */
+    .logo img {
+        height: 55px;
+    }
+    
+    .company-name {
+        font-size: 0.95rem;
     }
 }
