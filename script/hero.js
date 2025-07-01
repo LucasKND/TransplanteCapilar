@@ -86,6 +86,40 @@ document.addEventListener('DOMContentLoaded', function() {
     // Executar no carregamento e redimensionamento
     adjustHeroHeight();
     window.addEventListener('resize', adjustHeroHeight);
+    
+    // Sincronizar largura da imagem before/after com a imagem do doutor
+    function syncImageWidths() {
+        const doctorImage = document.querySelector('.hero-image img:first-child');
+        const beforeAfterImage = document.querySelector('.hero-before-after');
+        
+        if (doctorImage && beforeAfterImage && window.innerWidth > 1024) {
+            // Função para aplicar a largura
+            function applyWidth() {
+                const doctorWidth = doctorImage.offsetWidth;
+                if (doctorWidth > 0) {
+                    beforeAfterImage.style.width = doctorWidth + 'px';
+                }
+            }
+            
+            // Aguardar o carregamento da imagem do doutor se necessário
+            if (doctorImage.complete && doctorImage.naturalWidth !== 0) {
+                applyWidth();
+            } else {
+                doctorImage.addEventListener('load', applyWidth);
+            }
+            
+            // Usar um pequeno delay para garantir que o layout esteja estabilizado
+            setTimeout(applyWidth, 100);
+        } else if (beforeAfterImage && window.innerWidth <= 1024) {
+            // Reset width em dispositivos móveis
+            beforeAfterImage.style.width = '';
+        }
+    }
+    
+    // Executar sincronização no carregamento e redimensionamento
+    syncImageWidths();
+    window.addEventListener('resize', syncImageWidths);
+    window.addEventListener('load', syncImageWidths);
 });
 
 // Função para abrir WhatsApp com mensagem pré-definida
@@ -93,7 +127,7 @@ function openWhatsApp() {
     // Número de telefone com código do país (substitua pelo número correto)
     const phoneNumber = '4915788012551';
       // Mensagem pré-definida (deve ser codificada para URL)
-    const message = encodeURIComponent('Hallo! Ich interessiere mich für eine Beratung zum Haarimplantat in Brasilien.');
+    const message = encodeURIComponent('Hallo! Ich interessiere mich für uma Beratung zum Haarimplantat em Brasilien.');
     
     // Construir a URL do WhatsApp
     const whatsappUrl = `https://wa.me/${phoneNumber}?text=${message}`;
