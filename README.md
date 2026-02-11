@@ -5,7 +5,7 @@ O site foi desenvolvido para converter visitantes em leads através de tráfego 
 Consta pacotes de viagem, procedimentos médicos e a experiência de recuperação no país.
 
 ## 🌐 Link do Projeto
-[Acesse o site aqui](https://lucasknd.github.io/TransplanteCapilar/)
+(https://lucasknd.github.io/Site-Transplante-Capilar-na-Alemanha/)
 
 ---
 
@@ -31,11 +31,3 @@ Este projeto foi construído utilizando tecnologias web fundamentais para garant
 * **Fontes e Ícones:** Integração com bibliotecas externas para uma tipografia limpa.
 
 ---
-
-## 📂 Estrutura de Pastas
-
-```text
-├── assets/             # Imagens, ícones e arquivos de mídia
-├── css/                # Arquivos de estilização (se houver pastas separadas)
-├── js/                 # Scripts de interatividade
-└── index.html          # Arquivo principal do site
